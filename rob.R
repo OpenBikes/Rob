@@ -1,10 +1,21 @@
 require(jsonlite)
+require(leaflet)
 
-get_latest_city_geojson <- function(city) {
+get_latest_city_geojson <- function(city, dataframe=FALSE) {
   # Retrieve latest geoJSON of a city
   url <- paste('http://openbikes.co/api/geojson/', city, sep='')
-  res <- fromJSON(url)
-  return(res)
+  res <- fromJSON(url, simplifyVector = TRUE)
+  if (dataframe) {
+    features = as.data.frame(cbind(unlist(res$features$geometry$coordinates), unlist(res$features$geometry$type), unlist(res$features$properties$address), 
+                                   unlist(res$features$properties$bikes), unlist(res$features$properties$lat), unlist(res$features$properties$lon),
+                                   unlist(res$features$properties$name), unlist(res$features$properties$stands), unlist(res$features$properties$update),
+                                   unlist(res$features$properties$status), unlist(res$features$properties$type)))
+    colnames(features) = c('coordinates', 'type', 'address', 'bikes', 'lat', 'lon', 'name', 
+                           'stands', 'update', 'type')
+    return(features)
+  } else {
+      return(res)
+    }
 }
 
 get_station_names <- function(city) {
@@ -51,11 +62,10 @@ get_prediction <- function(city, station, timestamp) {
   return(res)
 }
 
-get_latest_city_geojson('Toulouse')
-get_station_names('Paris')
-get_cities_by_provider('jcdecaux')
-get_cities_by_country('France')
-get_city_center('Toulouse')
-get_city_update('Toulouse')
-get_prediction('Toulouse', '00003 - POMME', 1524176165)
-
+plot_city_stations <- function(city) {
+  bikes_icon = makeIcon("bike_icon.png", iconWidth=20, iconHeight=13)
+  center <- get_city_center(city)
+  stations = get_latest_city_geojson(city, dataframe=TRUE)
+  leaflet(data = stations) %>% setView(lng = center$center[2], lat = center$center[1], zoom = 12) %>% addTiles() %>%
+    addMarkers(~lon, ~lat, icon=bikes_icon, popup = ~as.character(sprintf('<i>Stations</i> : <b>%s</b> <br> <i>Bikes</i> : %d <br> <i>Stands</i> : %d', name, bikes, stands)))
+}

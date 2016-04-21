@@ -45,9 +45,10 @@ get_city_update('Toulouse')
 get_prediction('Toulouse', '00003 - POMME', 1524176165)
 ```
 
+## Plot city stations
 
-
-
-
+```r
+plot_city_stations('Toulouse')
+```
 
 
