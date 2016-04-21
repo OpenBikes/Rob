@@ -13,7 +13,5 @@ Imports:
     jsonlite,
     devtools,
     leaflet
-    
-VignetteBuilder: knitr
-  
+VignetteBuilder: NA
 RoxygenNote: 5.0.1
