@@ -1,6 +1,20 @@
 # Rob
 :rainbow: R SDK for the OpenBikes API
 
+# Updating to the latest version of OBR
+
+1. Install the release version of `devtools` from CRAN with `install.packages("devtools")`
+
+2. Follow the instructions below
+
+* **Mac and Linux**
+
+```r
+require('devtools')
+devtools::install_github("OpenBikes/obr")
+library(obr)
+```
+
 # Functionalities
 
 ## Retrieve latest geoJSON of a city
