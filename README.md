@@ -47,7 +47,7 @@ get_prediction('Toulouse', '00003 - POMME', 1524176165)
 
 ## Plot city stations
 
-[![Screenshot](Screenshot.gif)](http://i.imgur.com/5Gqfu7N.gifv)
+![stations](https://dl.dropboxusercontent.com/u/96300896/stations.gif)
 
 ```r
 plot_city_stations('Toulouse')
