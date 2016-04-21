@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>OBR by OpenBikes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">OBR</h1>
+      <h2 class="project-tagline">:ghost: R SDK for the OpenBikes API</h2>
+      <a href="https://github.com/OpenBikes/obr" class="btn">View on GitHub</a>
+      <a href="https://github.com/OpenBikes/obr/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/OpenBikes/obr/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="rob" class="anchor" href="#rob" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rob</h1>
+
+<p><img class="emoji" title=":rainbow:" alt=":rainbow:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f308.png" height="20" width="20" align="absmiddle"> R SDK for the OpenBikes API</p>
+
+<h1>
+<a id="functionalities" class="anchor" href="#functionalities" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functionalities</h1>
+
+<h2>
+<a id="retrieve-latest-geojson-of-a-city" class="anchor" href="#retrieve-latest-geojson-of-a-city" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve latest geoJSON of a city</h2>
+
+<div class="highlight highlight-source-r"><pre>get_latest_city_geojson(<span class="pl-s"><span class="pl-pds">'</span>Toulouse<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="retrieve-stations-names-of-a-city" class="anchor" href="#retrieve-stations-names-of-a-city" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve stations names of a city</h2>
+
+<div class="highlight highlight-source-r"><pre>get_station_names(<span class="pl-s"><span class="pl-pds">'</span>Paris<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="retrieve-cities-of-a-data-provider" class="anchor" href="#retrieve-cities-of-a-data-provider" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve cities of a data provider</h2>
+
+<div class="highlight highlight-source-r"><pre>get_cities_by_provider(<span class="pl-s"><span class="pl-pds">'</span>jcdecaux<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="retrieve-cities-of-a-country" class="anchor" href="#retrieve-cities-of-a-country" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve cities of a country</h2>
+
+<div class="highlight highlight-source-r"><pre>get_cities_by_country(<span class="pl-s"><span class="pl-pds">'</span>France<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="retrieve-center-of-a-city" class="anchor" href="#retrieve-center-of-a-city" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve center of a city</h2>
+
+<div class="highlight highlight-source-r"><pre>get_city_center(<span class="pl-s"><span class="pl-pds">'</span>Toulouse<span class="pl-pds">'</span></span>)</pre></div>
+
+<h2>
+<a id="retrieve-the-update-time-for-a-city" class="anchor" href="#retrieve-the-update-time-for-a-city" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve the update time for a city</h2>
+
+<div class="highlight highlight-source-r"><pre>get_city_update(<span class="pl-s"><span class="pl-pds">'</span>Toulouse<span class="pl-pds">'</span></span>)
+</pre></div>
+
+<h2>
+<a id="retrieve-the-update-time-for-a-city-1" class="anchor" href="#retrieve-the-update-time-for-a-city-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Retrieve the update time for a city</h2>
+
+<div class="highlight highlight-source-r"><pre>get_prediction(<span class="pl-s"><span class="pl-pds">'</span>Toulouse<span class="pl-pds">'</span></span>, <span class="pl-s"><span class="pl-pds">'</span>00003 - POMME<span class="pl-pds">'</span></span>, <span class="pl-c1">1524176165</span>)</pre></div>
+
+<h2>
+<a id="plot-city-stations" class="anchor" href="#plot-city-stations" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Plot city stations</h2>
+
+<p><img src="https://dl.dropboxusercontent.com/u/96300896/stations.gif" alt="stations"></p>
+
+<div class="highlight highlight-source-r"><pre>plot_city_stations(<span class="pl-s"><span class="pl-pds">'</span>Toulouse<span class="pl-pds">'</span></span>)</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/OpenBikes/obr">OBR</a> is maintained by <a href="https://github.com/OpenBikes">OpenBikes</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

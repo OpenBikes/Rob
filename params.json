@@ -1,0 +1,6 @@
+{
+  "name": "OBR",
+  "tagline": ":ghost: R SDK for the OpenBikes API",
+  "body": "# Rob\r\n:rainbow: R SDK for the OpenBikes API\r\n\r\n# Functionalities\r\n\r\n## Retrieve latest geoJSON of a city\r\n\r\n```r\r\nget_latest_city_geojson('Toulouse')\r\n```\r\n\r\n## Retrieve stations names of a city\r\n\r\n```r\r\nget_station_names('Paris')\r\n```\r\n\r\n## Retrieve cities of a data provider\r\n\r\n```r\r\nget_cities_by_provider('jcdecaux')\r\n```\r\n\r\n## Retrieve cities of a country\r\n\r\n```r\r\nget_cities_by_country('France')\r\n```\r\n\r\n## Retrieve center of a city\r\n\r\n```r\r\nget_city_center('Toulouse')\r\n```\r\n\r\n## Retrieve the update time for a city\r\n\r\n```r\r\nget_city_update('Toulouse')\r\n\r\n```\r\n## Retrieve the update time for a city\r\n\r\n```r\r\nget_prediction('Toulouse', '00003 - POMME', 1524176165)\r\n```\r\n\r\n## Plot city stations\r\n\r\n![stations](https://dl.dropboxusercontent.com/u/96300896/stations.gif)\r\n\r\n```r\r\nplot_city_stations('Toulouse')\r\n```\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
