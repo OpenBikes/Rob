@@ -1,7 +1,7 @@
 # Rob
 :rainbow: R SDK for the OpenBikes API
 
-# Examples
+# Functionalities
 
 ## Retrieve latest geoJSON of a city
 
