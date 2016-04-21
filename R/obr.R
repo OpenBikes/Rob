@@ -1,10 +1,12 @@
-require(jsonlite)
-require(leaflet)
+install.packages('jsonlite')
+install.packages('leaflet')
+library('jsonlite')
+library('leaflet')
 
 get_latest_city_geojson <- function(city, dataframe=FALSE) {
   # Retrieve latest geoJSON of a city
-  url <- paste('http://openbikes.co/api/geojson/', city, sep='')
-  res <- fromJSON(url, simplifyVector = TRUE)
+  api_url <- paste('http://openbikes.co/api/geojson/', city, sep='')
+  res <- fromJSON(api_url, simplifyVector = TRUE)
   if (dataframe) {
     features = as.data.frame(cbind(unlist(res$features$geometry$coordinates), unlist(res$features$geometry$type), unlist(res$features$properties$address), 
                                    unlist(res$features$properties$bikes), unlist(res$features$properties$lat), unlist(res$features$properties$lon),
@@ -20,45 +22,45 @@ get_latest_city_geojson <- function(city, dataframe=FALSE) {
 
 get_station_names <- function(city) {
   # Retrieve stations names of a city
-  url <- paste('http://openbikes.co/api/stations/', city, sep='')
-  res <- fromJSON(url)
+  api_url <- paste('http://openbikes.co/api/stations/', city, sep='')
+  res <- fromJSON(api_url)
   return(res)
 }
 
 get_cities_by_provider <- function(provider) {
   # Retrieve cities of a data provider
-  url <- paste('http://openbikes.co/api/providers/', provider, sep='')
-  res <- fromJSON(url)
+  api_url <- paste('http://openbikes.co/api/providers/', provider, sep='')
+  res <- fromJSON(api_url)
   return(res)
 }
 
 get_cities_by_country <- function(country) {
   # Retrieve cities of a country
-  url <- paste('http://openbikes.co/api/countries/', country, sep='')
-  res <- fromJSON(url)
+  api_url <- paste('http://openbikes.co/api/countries/', country, sep='')
+  res <- fromJSON(api_url)
   return(res)
 }
 
 get_city_center <- function(city) {
   # Retrieve center of a city
-  url <- paste('http://openbikes.co/api/centers/', city, sep='')
-  res <- fromJSON(url)
+  api_url <- paste('http://openbikes.co/api/centers/', city, sep='')
+  res <- fromJSON(api_url)
   return(res)
 }
 
 get_city_update <- function(city) {
   # Retrieve the update time for a city
-  url <- paste('http://openbikes.co/api/updates/', city, sep='')
-  res <- fromJSON(url)
+  api_url <- paste('http://openbikes.co/api/updates/', city, sep='')
+  res <- fromJSON(api_url)
   return(res)
 }
 
 get_prediction <- function(city, station, timestamp) {
   # Retrieve the update time for a city
   station <- gsub(" ", "%20", station)
-  url <- sprintf('http://openbikes.co/api/prediction/%s/%s/%d', city, station, timestamp)
-  print(url)
-  res <- fromJSON(url)
+  api_url <- sprintf('http://openbikes.co/api/prediction/%s/%s/%d', city, station, timestamp)
+  print(api_url)
+  res <- fromJSON(api_url)
   return(res)
 }
 
