@@ -1,7 +1,6 @@
 Package: obr
 Title: R SDK for the OpenBikes API
-Description: A 'Doxygen'-like in-source documentation system
-    for Rd, collation, and 'NAMESPACE' files.
+Description: Functionalities to query easily OpenBikes API.
 URL: https://github.com/openbikes/obr, http://openbikes.co
 Version: 1.0.0
 License: GPL (>= 2)
