@@ -65,7 +65,7 @@ get_prediction <- function(city, station, timestamp) {
 }
 
 plot_city_stations <- function(city) {
-  bikes_icon = makeIcon("bike_icon.png", iconWidth=20, iconHeight=13)
+  bikes_icon = makeIcon("../bike_icon.png", iconWidth=20, iconHeight=13)
   center <- get_city_center(city)
   stations = get_latest_city_geojson(city, dataframe=TRUE)
   leaflet(data = stations) %>% setView(lng = center$center[2], lat = center$center[1], zoom = 12) %>% addTiles() %>%
