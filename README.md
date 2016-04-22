@@ -1,5 +1,5 @@
 # Rob
-:rainbow: R SDK for the OpenBikes API
+:ghost: R SDK for the OpenBikes API
 
 # Updating to the latest version of OBR
 
