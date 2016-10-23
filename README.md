@@ -1,4 +1,4 @@
-# Rob
+# OBR
 :ghost: R SDK for the OpenBikes API
 
 # Updating to the latest version of OBR
@@ -12,7 +12,7 @@
 ```r
 require('devtools')
 devtools::install_github("OpenBikes/obr")
-library(obr)
+library('obr')
 ```
 
 # Functionalities
@@ -60,8 +60,6 @@ get_prediction('Toulouse', '00003 - POMME', 1524176165)
 ```
 
 ## Plot city stations
-
-![stations](https://dl.dropboxusercontent.com/u/96300896/stations.gif)
 
 ```r
 plot_city_stations('Toulouse')
