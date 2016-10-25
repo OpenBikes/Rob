@@ -143,6 +143,10 @@ get_stations <- function(slug=NULL, city_slug=NULL) {
 get_forecast <- function(city_slug=NULL, station_slug=NULL, kind=NULL, moment=NULL) {
   # Return a forecast for a station at a given time.
   
+  if (is.null(city_slug) | is.null(station_slug) | is.null(kind) | is.null(moment)) {
+    stop("city_slug, station_slug, kind and moment are required.", call. = FALSE)
+  }
+  
   # FIX: POST JSON data
   url <- sprintf("%s/forecast", BASE_URL)
   
@@ -192,15 +196,14 @@ get_closest_station <- function(latitude=NULL, longitude=NULL) {
   return(jsonlite::fromJSON(content(response, "text"), flatten=TRUE))
 }
 
-
-geojson <- get_latest_geojson(city="toulouse")
-countries <- get_countries(provider="keolis")
-providers <- get_providers(country="France")
-metrics <- get_metrics()
-updates <- get_updates()
-cities <- get_cities(country="France")
-stations <- get_stations(city_slug="toulouse", slug="00189-muret-boutinon")
-closest_city <- get_closest_city(43.556982, 1.466525)
-closest_station <- get_closest_station(43.556982, 1.466525)
-forecast <- get_forecast(city_slug='toulouse', station_slug="00003-pomme", kind="bikes", moment="1477398413.144025")
+# geojson <- get_latest_geojson(city="toulouse")
+# countries <- get_countries(provider="keolis")
+# providers <- get_providers(country="France")
+# metrics <- get_metrics()
+# updates <- get_updates()
+# cities <- get_cities(country="France")
+# stations <- get_stations(city_slug="toulouse")
+# closest_city <- get_closest_city(43.556982, 1.466525)
+# closest_station <- get_closest_station(43.556982, 1.466525)
+# forecast <- get_forecast(city_slug='toulouse', station_slug="00003-pomme", kind="bikes", moment="1477398413.144025")
 

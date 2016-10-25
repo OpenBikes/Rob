@@ -12,7 +12,6 @@ Depends:
 Imports:
     jsonlite,
     devtools,
-    leaflet
 Encoding: UTF-8
 LazyData: true
 VignetteBuilder: NA
