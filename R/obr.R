@@ -31,6 +31,10 @@ get_latest_geojson <- function(city=NULL) {
 
   response <- jsonlite::fromJSON(url, flatten=TRUE)
   colnames(response$features) <- snake_case(colnames(response$features))
+  response$features$latitude <- lapply(response$features$geometry_coordinates, function(x) {unlist(x)[1]})
+  response$features$longitude <- lapply(response$features$geometry_coordinates, function(x) {unlist(x)[2]})
+  drops <- c("geometry_coordinates", "geometry_type", "type")
+  response$features <- response$features[, !(names(response$features) %in% drops)]
   return (response)
 }
 
@@ -204,3 +208,4 @@ get_forecast <- function(city_slug=NULL, station_slug=NULL, kind=NULL, moment=NU
 
   return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
+

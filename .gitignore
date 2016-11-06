@@ -4,3 +4,5 @@
 .DS_Store
 .Rbuildignore
 .Rproj.user
+obr.Rcheck/
+obr.Rproj
