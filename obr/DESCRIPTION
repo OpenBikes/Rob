@@ -1,0 +1,10 @@
+Package: obr
+Type: Package
+Title: R SDK FOR THE OPENBIKES API
+Version: 0.1.0
+Author: Axel Bellec <contact.openbikes@gmail>
+Maintainer: Axel Bellec <contact.openbikes@gmail>
+Description: Functionalities to query easily OpenBikes API.
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
