@@ -48,7 +48,7 @@ get_countries <- function(provider=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return (unlist(jsonlite::fromJSON(httr::content(response, "text"), simplifyVector = FALSE)))
+  return (unlist(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), simplifyVector = FALSE)))
 }
 
 get_providers <- function(country=NULL) {
@@ -65,7 +65,7 @@ get_providers <- function(country=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return (unlist(jsonlite::fromJSON(httr::content(response, "text"), simplifyVector = FALSE)))
+  return (unlist(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), simplifyVector = FALSE)))
 }
 
 get_metrics <- function() {
@@ -78,7 +78,7 @@ get_metrics <- function() {
     stop("API did not return json", call. = FALSE)
   }
 
-  return (jsonlite::fromJSON(httr::content(response, "text"), simplifyVector = FALSE))
+  return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), simplifyVector = FALSE))
 }
 
 get_cities <- function(slug=NULL, country=NULL, provider=NULL, predictable=NULL, active=NULL) {
@@ -108,7 +108,7 @@ get_cities <- function(slug=NULL, country=NULL, provider=NULL, predictable=NULL,
     stop("API did not return json", call. = FALSE)
   }
 
-  return (jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
 
 get_updates <- function(city_slug=NULL) {
@@ -125,7 +125,7 @@ get_updates <- function(city_slug=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return (jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
 
 get_stations <- function(slug=NULL, city_slug=NULL) {
@@ -146,7 +146,7 @@ get_stations <- function(slug=NULL, city_slug=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return (jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
 
 get_closest_city <- function(latitude=NULL, longitude=NULL) {
@@ -163,7 +163,7 @@ get_closest_city <- function(latitude=NULL, longitude=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return(jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
 
 get_closest_station <- function(latitude=NULL, longitude=NULL) {
@@ -180,7 +180,7 @@ get_closest_station <- function(latitude=NULL, longitude=NULL) {
     stop("API did not return json", call. = FALSE)
   }
 
-  return(jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return(jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
 
 get_forecast <- function(city_slug=NULL, station_slug=NULL, kind=NULL, moment=NULL) {
@@ -202,5 +202,5 @@ get_forecast <- function(city_slug=NULL, station_slug=NULL, kind=NULL, moment=NU
     stop("API did not return json", call. = FALSE)
   }
 
-  return (jsonlite::fromJSON(httr::content(response, "text"), flatten=TRUE))
+  return (jsonlite::fromJSON(httr::content(response, "text", encoding = "UTF-8"), flatten=TRUE))
 }
