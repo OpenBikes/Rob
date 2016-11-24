@@ -1,3 +1,16 @@
+<div align="center">
+  <img src="misc/obr.png" alt="obr_logo"/>
+</div>
+
+<br/>
+
+<div align="center">
+	<img src="http://www.r-pkg.org/badges/version/obr.svg" alt="cran"/>
+	<a href="https://opensource.org/licenses/MIT">
+	<img src="http://img.shields.io/:license-mit-ff69b4.svg?style=flat-square" alt="mit"/>
+	</a>
+</div>
+
 # OBR
 :ghost: R SDK for the OpenBikes API
 
